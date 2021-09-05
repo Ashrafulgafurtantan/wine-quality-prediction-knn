@@ -33,7 +33,31 @@ public class Wine {
     public double alcohol;
     public  int quality;
 
-    public Wine() {
+    public Wine(
+            double fixed_acidity,
+            double    volatile_acidity,
+            double    citric_acid,
+            double    residual_sugar,
+            double   chlorides,
+            double    free_sulfur_dioxide,
+            double  total_sulfur_dioxide,
+            double   density,
+            double   pH,
+            double      sulphates,
+            double      alcohol
+    ) {
+        this.fixed_acidity = fixed_acidity;
+        this.volatile_acidity = volatile_acidity;
+        this.citric_acid = citric_acid;
+        this.residual_sugar = residual_sugar;
+        this.chlorides = chlorides;
+        this.free_sulfur_dioxide = free_sulfur_dioxide;
+        this.total_sulfur_dioxide = total_sulfur_dioxide;
+        this.density = density;
+        this.pH = pH;
+        this.sulphates = sulphates;
+        this.alcohol = alcohol;
+        this.quality = 999;
     }
 
     public Wine(

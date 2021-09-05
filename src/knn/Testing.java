@@ -12,10 +12,12 @@ public class Testing
     int testingPointSize;
     int accurate = 0;
     double accuracy = 0;
+    boolean isExperiment;
 
-    public Testing(List<Wine> trainingPoints, List<Wine> testPoints) {
+    public Testing(List<Wine> trainingPoints, List<Wine> testPoints,boolean isExperiment) {
         this.trainingPoints = trainingPoints;
         this.testPoints = testPoints;
+        this.isExperiment = isExperiment;
         doKNN();
     }
 
@@ -30,8 +32,15 @@ public class Testing
             }
 
             Collections.sort(resultPoints,(o1, o2) -> Double.compare(o1.getDistance(), o2.getDistance()));
-            if(calcClassName(dataPoint))
-                accurate++;
+
+            if(isExperiment){
+                for (int i=0; i<5; i++){
+                    System.out.println(resultPoints.get(i).getAttribute());
+                }
+            }else {
+                if(calcClassName(dataPoint))
+                    accurate++;
+            }
 
             resultPoints.clear();
         }
@@ -132,20 +141,3 @@ public class Testing
     }
 }
 
-class Temp{
-    int name;
-    int value;
-
-    @Override
-    public String toString() {
-        return "Temp{" +
-                "name=" + name +
-                ", value=" + value +
-                '}';
-    }
-
-    public Temp(int name, int value){
-        this.name = name;
-        this.value = value;
-    }
-}
