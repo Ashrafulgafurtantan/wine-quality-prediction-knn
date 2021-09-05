@@ -23,13 +23,13 @@ public class Main {
 
             System.out.println("Accuracy: " + accurate*100/10.0);
             while (true){
-                System.out.print(" Chose one:\n1.Test\n2.Exit\n");
+                System.out.print(" Chose one:\n1.Test Knn\n2.Exit\n");
 
                 Scanner sc = new Scanner(System.in);
                 if(sc.nextInt() == 2)
                     break;
                 else{
-                    System.out.println("Give us data,use ; as a delimiter.eg(6.6;0.34;0.4;8.1;0.046;68;170;0.99494;3.15;0.5;9.55;6)");
+                    System.out.println("Give us data.eg(6.6;0.34;0.4;8.1;0.046;68;170;0.99494;3.15;0.5;9.55;6)");
                     Scanner dataLine = new Scanner(System.in);
                     System.out.println();
                     String temp = dataLine.next();
@@ -40,7 +40,7 @@ public class Main {
                             tempScanner.nextDouble(),tempScanner.nextDouble(),tempScanner.nextDouble(),
                             tempScanner.nextDouble(),tempScanner.nextDouble(),tempScanner.nextDouble(),tempScanner.nextDouble(),
                             tempScanner.nextDouble(),tempScanner.nextDouble(),tempScanner.nextDouble(),tempScanner.nextDouble());
-                    System.out.println(wine.toString());
+//                    System.out.println(wine.toString());
                     CrossValidation crossValidation = new CrossValidation();
                     crossValidation.getTestAndTrainingData(new File("winequality-white.csv"));
                     List<Wine> singleTestPoint = new ArrayList<Wine>();

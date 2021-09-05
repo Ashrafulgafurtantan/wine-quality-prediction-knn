@@ -34,9 +34,7 @@ public class Testing
             Collections.sort(resultPoints,(o1, o2) -> Double.compare(o1.getDistance(), o2.getDistance()));
 
             if(isExperiment){
-                for (int i=0; i<5; i++){
-                    System.out.println(resultPoints.get(i).getAttribute());
-                }
+                getCalculatedAttributeName();
             }else {
                 if(calcClassName(dataPoint))
                     accurate++;
@@ -70,8 +68,7 @@ public class Testing
 
 
     }
-    /*
-    public boolean calcClassName (Wine dataPoint) {
+    public void getCalculatedAttributeName () {
       Temp  class0=new Temp(0,0);
       Temp  class1=new Temp(1,0);
       Temp  class2=new Temp(2,0);
@@ -86,7 +83,7 @@ public class Testing
 
 
         for (int i=0; i<5; i++){
-            System.out.println(resultPoints.get(i).getAttribute());
+
             if (resultPoints.get(i).getAttribute() == class0.name)
                 class0.value +=1;
             else if (resultPoints.get(i).getAttribute() == class1.name)
@@ -122,22 +119,27 @@ public class Testing
         tempList.add(class8);
         tempList.add(class9);
         tempList.add(class10);
-
-
         Collections.sort(tempList,(o1, o2) -> Integer.compare(o1.value, o2.value));
-         testingPointSize = testPoints.size()-20;
 
-         if(dataPoint.quality == tempList.get(10).name || tempList.get(10).value == tempList.get(9).name )
-            return  true;
-         else
-             return false;
 
+        if(tempList.get(10).value == tempList.get(9).value ){
+            System.out.println("Result = "+tempList.get(10).name+ " or "+tempList.get(9).name);
+        }else {
+            System.out.println("Result = "+tempList.get(10).name);
+        }
+        System.out.println("\n");
     }
 
-    */
 
     public double getAccuracy() {
         return accuracy;
     }
 }
 
+class Temp{
+    int name,value;
+    public Temp(int name,int value){
+        this.name=name;
+        this.value = value;
+    }
+}

@@ -28,7 +28,7 @@ public class CrossValidation {
             tempScanner.close();
         }
         cin.close();
-        System.out.println(points.size());
+//        System.out.println(points.size());
         for(int i=0; i<points.size()/10; i++)
         {
             Random rand = new Random();
